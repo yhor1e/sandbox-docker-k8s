@@ -3,7 +3,7 @@
 ## todo
 
 - [x] 🌟 Introduction to Docker 🌟
-- [ ] 🌟 Images, Containers, and Ports 🌟
+- [x] 🌟 Images, Containers, and Ports 🌟
 - [ ] 🌟 Volumes 🌟
 - [ ] 🌟 Building Images 🌟
 - [ ] 🌟 Project: Build an Image for an API 🌟
