@@ -24,15 +24,7 @@
 
 ## note
 
-### Introduction to Docker
-
-```
-$ docker --version
-```
-
-```
-$ docker ps
-```
+### Volumes
 
 ### Images, Containers, and Ports
 
@@ -45,11 +37,11 @@ $ docker images
 ```
 
 ```
-docker run nginx:latest
+$ docker run nginx:latest
 ```
 
 ```
-docker container ls  # is the same as "docker ps"?
+$ docker container ls  # is the same as "docker ps"?
 ```
 
 ```
@@ -85,7 +77,7 @@ $ docker rm 7d71094bca43 # rm container
 ```
 
 ```
-docker ps -a -q # -q is for displaying only id
+$ docker ps -a -q # -q is for displaying only id
 ```
 
 ```
@@ -98,4 +90,14 @@ $ docker rm -f $(docker ps -aq) # Remove even running containers forcely
 
 ```
 $ docker run --name website -d -p 3000:80 -p 8080:80 nginx:latest  # Specify name
+```
+
+### Introduction to Docker
+
+```
+$ docker --version
+```
+
+```
+$ docker ps
 ```
