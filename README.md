@@ -33,3 +33,25 @@ $ docker --version
 ```
 $ docker ps
 ```
+
+### Images, Containers, and Ports
+
+```
+$ docker pull nginx
+```
+
+```
+$ docker images
+```
+
+```
+docker run nginx:latest
+```
+
+```
+docker container ls  # is the same as "docker ps"?
+```
+
+```
+$ docker run -d nginx:latest  # detach mode
+```
