@@ -55,3 +55,47 @@ docker container ls  # is the same as "docker ps"?
 ```
 $ docker run -d nginx:latest  # detach mode
 ```
+
+```
+$ docker stop 5caeec4293f8 # container id
+```
+
+```
+$ docker run -d -p 8080:80 nginx:latest 
+```
+
+```
+$ docker run -d -p 8080:80 -p 3000:80 nginx:latest # both port are portforwarded to 80
+```
+
+```
+$ docker stop agitated_margulis  # container name
+```
+
+```
+$ docker start priceless_jepsen # ran container name
+```
+
+```
+$ docker ps -a
+```
+
+```
+$ docker rm 7d71094bca43 # rm container
+```
+
+```
+docker ps -a -q # -q is for displaying only id
+```
+
+```
+$ docker rm $(docker ps -aq)  # Remove all container
+```
+
+```
+$ docker rm -f $(docker ps -aq) # Remove even running containers forcely
+```
+
+```
+$ docker run --name website -d -p 3000:80 -p 8080:80 nginx:latest  # Specify name
+```
