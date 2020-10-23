@@ -24,6 +24,22 @@
 
 ## note
 
+### Building Images
+
+`Dockerfile`
+```
+FROM nginx:latest
+ADD . /usr/share/nginx/html
+```
+
+```
+$ docker build --tag website:latest   # . : where Docker file is.
+```
+
+```
+$ docker run --name website -p 8080:80 -d website:latest 
+```
+
 ### Volumes
 
 ```
