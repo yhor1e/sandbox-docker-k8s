@@ -4,7 +4,7 @@
 
 - [x] 🌟 Introduction to Docker 🌟
 - [x] 🌟 Images, Containers, and Ports 🌟
-- [ ] 🌟 Volumes 🌟
+- [x] 🌟 Volumes 🌟
 - [ ] 🌟 Building Images 🌟
 - [ ] 🌟 Project: Build an Image for an API 🌟
 - [ ] 🌟 Caching and Layers 🌟
@@ -25,6 +25,23 @@
 ## note
 
 ### Volumes
+
+```
+$ docker run --name website -v $(pwd):/usr/share/nginx/html:ro  -d -p 8080:80 nginx:latest  # ro -> read only
+```
+
+```
+$ docker exec -it website bash
+```
+
+```
+$ docker run --name website -v $(pwd):/usr/share/nginx/html  -d -p 8080:80 nginx:latest
+```
+
+```
+$ docker run --name website-copy --volumes-from website -d -p 8081:80 nginx:latest
+```
+
 
 ### Images, Containers, and Ports
 
