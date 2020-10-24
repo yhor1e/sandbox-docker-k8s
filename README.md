@@ -7,7 +7,7 @@
 - [x] 🌟 Volumes 🌟
 - [x] 🌟 Building Images 🌟
 - [x] 🌟 Project: Build an Image for an API 🌟
-- [ ] 🌟 Caching and Layers 🌟
+- [x] 🌟 Caching and Layers 🌟
 - [ ] 🌟 Reducing Image Size 🌟
 - [ ] 🌟 Tags and Versioning 🌟
 - [ ] 🌟 Image Registries 🌟
@@ -32,6 +32,18 @@ node_modules
 Dockerfile
 .git
 ```
+
+`Dockerfile` **To use cache setting**
+```diff
+FROM node:latest
+WORKDIR /app
++ ADD package*.json ./
++ RUN npm install
+ADD . .
+- RUN npm install
+CMD node index.js
+```
+
 
 ### Project: Build an Image for an API
 
