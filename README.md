@@ -8,7 +8,7 @@
 - [x] 🌟 Building Images 🌟
 - [x] 🌟 Project: Build an Image for an API 🌟
 - [x] 🌟 Caching and Layers 🌟
-- [ ] 🌟 Reducing Image Size 🌟
+- [x] 🌟 Reducing Image Size 🌟
 - [ ] 🌟 Tags and Versioning 🌟
 - [ ] 🌟 Image Registries 🌟
 - [ ] 🌟 Debugging Containers 🌟
@@ -23,6 +23,20 @@
 * https://www.youtube.com/watch?v=t8GbPocwQW0
 
 ## note
+
+### Reducing Image Size
+
+```
+$ docker pull node:lts-alpine
+```
+
+```
+$ docker image ls
+```
+
+```
+$ docker pull nginx:alpine      
+```
 
 ### Caching and Layers
 
