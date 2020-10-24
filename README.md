@@ -5,8 +5,8 @@
 - [x] 🌟 Introduction to Docker 🌟
 - [x] 🌟 Images, Containers, and Ports 🌟
 - [x] 🌟 Volumes 🌟
-- [ ] 🌟 Building Images 🌟
-- [ ] 🌟 Project: Build an Image for an API 🌟
+- [x] 🌟 Building Images 🌟
+- [x] 🌟 Project: Build an Image for an API 🌟
 - [ ] 🌟 Caching and Layers 🌟
 - [ ] 🌟 Reducing Image Size 🌟
 - [ ] 🌟 Tags and Versioning 🌟
@@ -23,6 +23,33 @@
 * https://www.youtube.com/watch?v=t8GbPocwQW0
 
 ## note
+
+### Caching and Layers
+
+`.dockerignore`
+```
+node_modules
+Dockerfile
+.git
+```
+
+### Project: Build an Image for an API
+
+```
+FROM node:latest
+WORKDIR /app
+ADD . .
+RUN npm install
+CMD node index.js
+```
+
+```
+$ docker build -t user-service-api:latest .
+```
+
+```
+$ docker run --name user-api -d -p 3000:3000 user-service-api:latest
+```
 
 ### Building Images
 
