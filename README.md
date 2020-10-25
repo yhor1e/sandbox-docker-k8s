@@ -9,7 +9,7 @@
 - [x] 🌟 Project: Build an Image for an API 🌟
 - [x] 🌟 Caching and Layers 🌟
 - [x] 🌟 Reducing Image Size 🌟
-- [ ] 🌟 Tags and Versioning 🌟
+- [x] 🌟 Tags and Versioning 🌟
 - [ ] 🌟 Image Registries 🌟
 - [ ] 🌟 Debugging Containers 🌟
 - [ ] 🌟 Introduction to Kubernetes 🌟
@@ -23,6 +23,44 @@
 * https://www.youtube.com/watch?v=t8GbPocwQW0
 
 ## note
+
+### Tags and Versioning
+
+```diff
++ FROM nginx:1.17.2-alpine
+- FROM nginx:alpine
+ADD . /usr/share/nginx/html
+```
+
+```diff
++ FROM node:12.19.0-alpine
+- FROM node:alpine
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD . .
+CMD node index.js
+```
+
+```diff
+$ docker tag amigoscode-website:latest amigoscode-website:1
+$ docker image ls
+REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
+user-service-api     latest              a1a845b148ba        8 minutes ago       126MB
++ amigoscode-website   1                   758c4646f93c        9 minutes ago       22.5MB
+amigoscode-website   latest              758c4646f93c        9 minutes ago       22.5MB
+```
+
+```
+$ docker run --name amigoscode-latest -p 8080:80 -d amigoscode-website:latest 
+cec4c2a68abb00e0b0ca483ce8ddfa4101a0759f7bd14275bb24a013107517b2
+
+$ docker run --name amigoscode-2 -p 8082:80 -d amigoscode-website:2 
+e3cf906a7c7165831a103ec7c430b983a80751bdac6f5c9564d042ee9b46a85a
+
+$ docker run --name amigoscode-1 -p 8081:80 -d amigoscode-website:1
+e91091f897098766920059dc2cf58c260fc1db33571208433f98c5ae50d20921
+```
 
 ### Reducing Image Size
 
