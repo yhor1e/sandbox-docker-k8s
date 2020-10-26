@@ -26,6 +26,29 @@
 
 ### Introduction to Kubernetes
 
+* Master Node : Worker Node (includes kublet)  = 1 : n
+* Woker Node : Docker Container  = 1 : n
+* Master Node
+  - API Server
+  - Contoller Manager
+  - Scheduler
+  - etcd (key-value sotre)
+* Virtual Network
+* Master は大事なので、商用だと複数ある必要がある。
+* Pod
+  - smallest unit of L8s
+  - Abstraction over container
+  - usually 1 application per Pod
+  - Each Pod gets its own IP address
+  - New IP address on re-creation
+* Service
+  - permanent IP address
+  - lifecycle of Pod and Service NOT connected
+* Ingress: 外からアクセスするためのもの？
+* 
+
+### Introduction to Kubernetes
+
 ### Debugging Containers
 
 ```
