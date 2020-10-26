@@ -11,7 +11,7 @@
 - [x] 🌟 Reducing Image Size 🌟
 - [x] 🌟 Tags and Versioning 🌟
 - [x] 🌟 Image Registries 🌟
-- [ ] 🌟 Debugging Containers 🌟
+- [x] 🌟 Debugging Containers 🌟
 - [ ] 🌟 Introduction to Kubernetes 🌟
 - [ ] 🌟 Kubernetes Architecture & Components 🌟
 - [ ] 🌟 Developing Locally 🌟
@@ -23,6 +23,26 @@
 * https://www.youtube.com/watch?v=t8GbPocwQW0
 
 ## note
+
+### Introduction to Kubernetes
+
+### Debugging Containers
+
+```
+$ docker inspect cf1ea1e1a7bf  # or name
+```
+
+```
+$ docker logs cf1ea1e1a7bf 
+```
+
+```
+$ docker logs -f cf1ea1e1a7bf  # -f: follow
+```
+
+```
+$ docker exec -it  2a00473593e7f /bin/sh
+```
 
 ### Image Registries
 
