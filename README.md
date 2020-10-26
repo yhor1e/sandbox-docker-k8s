@@ -10,7 +10,7 @@
 - [x] 🌟 Caching and Layers 🌟
 - [x] 🌟 Reducing Image Size 🌟
 - [x] 🌟 Tags and Versioning 🌟
-- [ ] 🌟 Image Registries 🌟
+- [x] 🌟 Image Registries 🌟
 - [ ] 🌟 Debugging Containers 🌟
 - [ ] 🌟 Introduction to Kubernetes 🌟
 - [ ] 🌟 Kubernetes Architecture & Components 🌟
@@ -29,11 +29,18 @@
 * 2FA を有効にしている場合は Access Token が必要。
   - https://docs.docker.com/docker-hub/access-tokens/
 
-
 ```
 $ docker push yhor1e/website:1
 $ docker push yhor1e/website:2
 $ docker push yhor1e/website:latest
+```
+
+```
+$ docker pull yhor1e/website # download latest
+```
+
+```
+docker run --name yhor1e-website -p 9000:80 -d yhor1e/website:latest
 ```
 
 ### Tags and Versioning
