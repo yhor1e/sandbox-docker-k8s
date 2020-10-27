@@ -12,7 +12,7 @@
 - [x] 🌟 Tags and Versioning 🌟
 - [x] 🌟 Image Registries 🌟
 - [x] 🌟 Debugging Containers 🌟
-- [ ] 🌟 Introduction to Kubernetes 🌟
+- [x] 🌟 Introduction to Kubernetes 🌟
 - [ ] 🌟 Kubernetes Architecture & Components 🌟
 - [ ] 🌟 Developing Locally 🌟
 - [ ] 🌟 Project: MongoDB and Mongo Express 🌟e end 🎉
@@ -23,6 +23,8 @@
 * https://www.youtube.com/watch?v=t8GbPocwQW0
 
 ## note
+
+### Kubernetes Architecture & Components
 
 ### Introduction to Kubernetes
 
@@ -44,10 +46,34 @@
 * Service
   - permanent IP address
   - lifecycle of Pod and Service NOT connected
+  - Internal Service?
 * Ingress: 外からアクセスするためのもの？
-* 
+  - External Service?
+  
+* ConfigMap
+  - external configuration
+  - `DB_URL = mongo-db`
+  - シークレットなものはおいていけない。
 
-### Introduction to Kubernetes
+* Secrets
+  - シークレットデータ用。
+  - base64 エンコードされる
+
+DB コンテナーが作り直されるとデータが消失する。
+そのため、ローカル化、リモートに作る。K8s クラスタ外に。
+K8s はデータをマネージしない。
+
+Service で Replica できる。
+ロードバランサも。また、parmanent IP。
+
+* Deployment
+  - bluepring for pods
+  - abstraction of pod
+  - DB のデータのように State を管理する必要があるものはだめ。
+    それは StatefulSet を使う。
+  
+* StatefulSet
+  - not easy
 
 ### Debugging Containers
 
