@@ -13,7 +13,7 @@
 - [x] 🌟 Image Registries 🌟
 - [x] 🌟 Debugging Containers 🌟
 - [x] 🌟 Introduction to Kubernetes 🌟
-- [ ] 🌟 Kubernetes Architecture & Components 🌟
+- [x] 🌟 Kubernetes Architecture & Components 🌟
 - [ ] 🌟 Developing Locally 🌟
 - [ ] 🌟 Project: MongoDB and Mongo Express 🌟e end 🎉
 
@@ -24,9 +24,47 @@
 
 ## note
 
-### Kubernetes Architecture & Components
+### Developing Locally
 
-### Introduction to Kubernetes
+Minikube は 1 つの Node 内に Contianer を複数作成する。
+Node 内に Mater Process と Worker Process を作る。
+
+Node 内に API サーバがある。
+その API を使用する CLI は KUBECTL で操作する。
+
+KUBECTL は Minikube cluster だけでなく通常の Cloud ｃluster も操作できる。
+
+```
+$ minikube start --vm-driver=virtualbox
+```
+
+Docker がインストールされている環境がダンロードされる。
+
+```
+$ kubectl get nodes
+NAME       STATUS   ROLES    AGE   VERSION
+minikube   Ready    master   19s   v1.19.2
+```
+
+```
+$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+```
+
+```
+$ minikube stop
+```
+
+```
+$ minikube start
+```
+
+### Kubernetes Architecture & Components
 
 * Master Node : Worker Node (includes kublet)  = 1 : n
 * Woker Node : Docker Container  = 1 : n
@@ -74,6 +112,8 @@ Service で Replica できる。
   
 * StatefulSet
   - not easy
+
+### Introduction to Kubernetes
 
 ### Debugging Containers
 
