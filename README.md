@@ -14,15 +14,17 @@
 - [x] 🌟 Debugging Containers 🌟
 - [x] 🌟 Introduction to Kubernetes 🌟
 - [x] 🌟 Kubernetes Architecture & Components 🌟
-- [ ] 🌟 Developing Locally 🌟
-- [ ] 🌟 Project: MongoDB and Mongo Express 🌟e end 🎉
-
+- [x] 🌟 Developing Locally 🌟
+- [ ] 🌟 Project: MongoDB and Mongo Express 🌟
 
 ## ref
 
 * https://www.youtube.com/watch?v=t8GbPocwQW0
 
 ## note
+
+### Project: MongoDB and Mongo Express
+
 
 ### Developing Locally
 
@@ -62,6 +64,35 @@ $ minikube stop
 
 ```
 $ minikube start
+```
+
+deployment は pod を抽象化したもの。
+
+```
+$ kubectl create deployment nginx-depl --image=nginx
+```
+
+```
+$ kubectl get deployments      
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-depl   0/1     1            0           11s
+
+$ kubectl get pod
+NAME                          READY   STATUS    RESTARTS   AGE
+nginx-depl-5c8bf76b5b-7cscz   1/1     Running   0          23s
+```
+
+```
+kubectl describe pod mongo-dpl-7675b8cd4c-pwsr2 
+```
+
+```
+$ kubectl exec -it mongo-dpl-7675b8cd4c-pwsr2 -- bin/bash
+root@mongo-dpl-7675b8cd4c-pwsr2:/#
+```
+
+```
+$ kubectl apply -f nginx-deployment.yaml # 設定をファイルから反映する。途中で replicas の数を変えることもできる。
 ```
 
 ### Kubernetes Architecture & Components
