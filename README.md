@@ -15,7 +15,7 @@
 - [x] 🌟 Introduction to Kubernetes 🌟
 - [x] 🌟 Kubernetes Architecture & Components 🌟
 - [x] 🌟 Developing Locally 🌟
-- [ ] 🌟 Project: MongoDB and Mongo Express 🌟
+- [x] 🌟 Project: MongoDB and Mongo Express 🌟
 
 ## ref
 
@@ -24,6 +24,32 @@
 ## note
 
 ### Project: MongoDB and Mongo Express
+
+```
+$ kubectl apply -f secrets.yml
+```
+
+```
+$ kubectl apply -f deployment.yml --validate=false
+```
+
+env がエラーとなり、validate オプションを指定しないと deployment できなかった。
+
+```
+$ kubectl get pod --watch
+```
+
+```
+$ kubectl describe pod mongodb-deployment-79c8fcfd4-mb8m4
+```
+
+```
+$ kubectl get pod -o wide
+```
+
+```
+$ kubectl get all | grep mongo
+```
 
 
 ### Developing Locally
